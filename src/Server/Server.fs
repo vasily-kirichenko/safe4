@@ -17,8 +17,7 @@ let port = 8085us
 
 type State = unit
 
-let init (clientDispatch: Dispatch<ClientMsg>) () =
-    clientDispatch (ClientMsg.GotNow DateTime.Now)
+let init (_clientDispatch: Dispatch<ClientMsg>) () =
     (), Cmd.ofMsg ServerMsg.Tick
 
 let update (clientDispatch: Dispatch<ClientMsg>) msg state =

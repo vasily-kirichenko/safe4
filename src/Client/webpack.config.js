@@ -40,6 +40,10 @@ module.exports = {
             '/api/*': {
                 target: 'http://localhost:' + port,
                 changeOrigin: true
+            },
+            '/socket': {
+                target: 'http://localhost:' + port,
+                ws: true
             }
         },
         contentBase: "./public",

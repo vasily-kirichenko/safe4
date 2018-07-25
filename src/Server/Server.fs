@@ -26,7 +26,7 @@ let update (clientDispatch: Dispatch<ClientMsg>) msg state =
         clientDispatch (ClientMsg.GotNow DateTime.Now)
         state,
         Cmd.ofAsync
-            (fun () -> Async.Sleep 1000)
+            (fun () -> Async.Sleep 100)
             ()
             (fun _ -> ServerMsg.Tick)
             (fun _ -> ServerMsg.Tick)
